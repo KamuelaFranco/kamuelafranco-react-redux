@@ -1,0 +1,32 @@
+{
+  "name": "redux-react-basic-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "radium": "^0.15.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "babel-plugin-flow-comments": "^1.0.9",
+    "css-loader": "^0.19.0",
+    "express": "^4.13.3",
+    "json-loader": "^0.5.3",
+    "redux-devtools": "^2.1.5",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2"
+  },
+  "scripts": {
+    "serve": "node server.js",
+    "start": "node ./node_modules/webpack/bin/webpack.js --watch & node server.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "build-prod": "NODE_ENV=production webpack --config webpack.config.prod.js"
+  },
+  "author": "Kamuela Franco",
+  "license": "MIT"
+}
