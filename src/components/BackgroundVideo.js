@@ -36,10 +36,15 @@ const styles = {
 	}
 };
 
+function disableClick(event) {
+	event.preventDefault();
+	return false;
+}
+
 const BackgroundVideo = (props) => {
 	return (
 		<div style={styles.fullscreenBackground}>
-		    <video loop muted autoPlay poster={props.posterSource} style={styles.fullscreenBackgroundVideo}>
+		    <video onContextMenu={disableClick} loop muted autoPlay poster={props.posterSource} style={styles.fullscreenBackgroundVideo}>
 		        <source src={props.videoSource} type={props.videoType} />
 		    </video>
 		</div>
