@@ -2,7 +2,7 @@
 const GO_FORWARD = 'GO_FORWARD';
 const GO_BACKWARD = 'GO_BACKWARD';
 const SEARCH = 'SEARCH';
-const SET_AUTOPLAY_SUPPORT = 'SET_AUTOPLAY_SUPPORT';
+const FILL_RESULTS = 'FILL_RESULTS';
 
 // Define action creators
 function search(query) {
@@ -17,17 +17,17 @@ function prevPage(steps) {
 	return { type: GO_BACKWARD, steps };
 }
 
-function setAutoplaySupport(isSupported) {
-	return { type: SET_AUTOPLAY_SUPPORT , isSupported }
+function fillResults(results) {
+	return { type: FILL_RESULTS, results }
 }
 
 module.exports = {
 	GO_FORWARD,
 	GO_BACKWARD,
 	SEARCH,
-	SET_AUTOPLAY_SUPPORT,
+	FILL_RESULTS,
 	nextPage,
 	prevPage,
 	search,
-	setAutoplaySupport
+	fillResults
 };

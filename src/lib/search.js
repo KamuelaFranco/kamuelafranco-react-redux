@@ -1,22 +1,32 @@
 const store = require('../store');
+const { fillResults } = require('../actions');
 
 const topics = [{
 	title: "LinkedIn",
-	body: "Yada yada"
+	body: "Yada yada",
+	url: "https://linkedin.com/in/KamuelaFranco"
 },{
 	title: "Blog",
-	body: "Yada yada"
+	body: "Yada yada",
+	url: "https://medium.com/@Kamuela"
 },{
 	title: "Twitter",
-	body: "Yada yada"
+	body: "Yada yada",
+	url: "https://twitter.com/Kamuela"
 }];
 
-const unsubscribe = store.subscribe(() => {
-	const query = store.getState().searchQuery;
-	const results = topics.find(topic => {
-		return topic.title === query;
-	});
-	if (results) {
-		console.log(results);
+function search() {
+	const query = store.getState().searchQuery.toLowerCase();
+	if (query) {
+		const results = topics.filter(topic => {
+			return topic.title.toLowerCase() === query;
+		});
+		if (results.length) {
+			store.dispatch(fillResults(results));
+		}
+	} else {
+		store.dispatch(fillResults());
 	}
-});
+}
+
+module.exports = search;
