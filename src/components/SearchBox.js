@@ -14,7 +14,7 @@ const styles = {
 		textAlign: 'center',
 		border: '3px',
 		backgroundColor: 'rgba(255,255,255,0.4)',
-		width: '200px',
+		width: '280px',
 		padding: '10px',
 		borderRadius: '3px',
 		boxShadow: '0px 0px 3px 0px rgba(0,0,0,0.25)'
@@ -34,24 +34,17 @@ class SearchBox extends Component {
 			if (this.props.results.length > 0) {
 				window.open(this.props.results[0].url);
 			} else {
-				this.shake();
+				this.blinkSearchBox(6, 'red', 100);
 			}
 			this.refs.searchInput.value = '';
 			search();
 		}
 	}
 
-	shake() {
+	blinkSearchBox(numberOfTimes, outlineColor, timeoutMsec) {
 		let style = this.refs.searchInput.style;
-		let oldWidth = style.width;
 		let oldBorderColor = style.borderColor;
-		function toggleWidth() {
-			if (style.width === oldWidth) {
-				style.width = '30%';
-			} else {
-				style.width = oldWidth;
-			}
-		}
+
 		function toggleBorderColor(color) {
 			if (style.borderColor === oldBorderColor) {
 				style.borderColor = color;
@@ -59,18 +52,15 @@ class SearchBox extends Component {
 				style.borderColor = oldBorderColor;
 			}
 		}
-		let number = 6;
-		let placeholder = style.placeholder;
-		style.placeholder = ' ';
+
+		let number = numberOfTimes;
 		let interval = setInterval(() => {
-			toggleBorderColor('red');
+			toggleBorderColor(outlineColor);
 			number--;
 			if (number === 0) {
 				clearInterval(interval);
 			}
-		}, 200);
-		style.placeholder = placeholder;
-		style.width = oldWidth;
+		}, timeoutMsec);
 	}
 
 	render () {
@@ -85,7 +75,7 @@ class SearchBox extends Component {
 						type='textbox'
 						onChange={this.handleChange.bind(this)}
 						onKeyPress={this.handleChange.bind(this)}
-						placeholder='LinkedIn, Twitter, Blog...'
+						placeholder='LinkedIn, Email, GitHub, Twitter, Blog, Instagram'
 					/>
 				</div>
 			</div>

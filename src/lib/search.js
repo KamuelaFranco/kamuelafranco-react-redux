@@ -13,6 +13,18 @@ const topics = [{
 	title: "Twitter",
 	body: "Yada yada",
 	url: "https://twitter.com/Kamuela"
+},{
+	title: "Email",
+	body: "Yada yada",
+	url: "mailto:kamuela.franco@gmail.com"
+},{
+	title: "GitHub",
+	body: "Yada yada",
+	url: "https://github.com/KamuelaFranco"
+},{
+	title: "Instagram",
+	body: "Yada yada",
+	url: "https://instagram.com/KamuelaFranco"
 }];
 
 function search() {
