@@ -9,10 +9,10 @@ const App = require('./containers/App');
 const store = require('./store');
 
 window.addEventListener('load', () => {
-  ReactDOM.render(
-      <Provider store={store}>
-          <App />
-      </Provider>,
-      document.getElementById('react-mount')
-  );
+    ReactDOM.render(
+        <Provider store={store}>
+            <App />
+        </Provider>,
+        document.getElementById('react-mount')
+    );
 });
