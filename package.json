@@ -12,9 +12,13 @@
   },
   "devDependencies": {
     "babel-core": "^5.8.25",
+    "babel-eslint": "^5.0.0",
     "babel-loader": "^5.3.2",
     "babel-plugin-flow-comments": "^1.0.9",
     "css-loader": "^0.19.0",
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-react": "^4.0.0",
     "json-loader": "^0.5.3",
     "koa": "^1.1.2",
     "koa-static": "^1.5.2",
@@ -25,8 +29,8 @@
   "scripts": {
     "serve": "node server.js",
     "start": "node ./node_modules/webpack/bin/webpack.js --watch & node server.js",
-    "build": "node ./node_modules/webpack/bin/webpack.js",
-    "build-prod": "NODE_ENV=production webpack --config webpack.config.prod.js"
+    "webpack": "node ./node_modules/webpack/bin/webpack.js",
+    "webpack-prod": "NODE_ENV=production webpack --config webpack.config.prod.js"
   },
   "author": "Kamuela Franco",
   "license": "MIT"
