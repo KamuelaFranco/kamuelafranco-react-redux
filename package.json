@@ -20,8 +20,6 @@
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-react": "^4.0.0",
     "json-loader": "^0.5.3",
-    "koa": "^1.1.2",
-    "koa-static": "^1.5.2",
     "redux-devtools": "^2.1.5",
     "style-loader": "^0.12.4",
     "webpack": "^1.12.2"
