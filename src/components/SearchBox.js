@@ -27,8 +27,8 @@ const styles = {
 };
 
 class SearchBox extends Component {
-  constructor(props) {
-    this.props = props;
+  constructor() {
+    super();
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -74,9 +74,11 @@ class SearchBox extends Component {
         <h1 style={styles.heading}>Kamuela Franco</h1>
         <div style={styles.searchBox}>
           <input style={styles.input}
-            ref="searchInput" type="textbox" onChange={this.handleChange}
+            ref="searchInput"
+            type="textbox"
+            onChange={this.handleChange}
             onKeyPress={this.handleChange}
-            placeholder="LinkedIn, Email, GitHub, Twitter, Blog, Instagram"
+            placeholder="LinkedIn, Email, GitHub, Twitter, Blog"
           />
         </div>
       </div>
@@ -85,8 +87,8 @@ class SearchBox extends Component {
 }
 
 SearchBox.propTypes = {
-  onSearch: React.propTypes.func.isRequired,
-  results: React.propTypes.array.isRequired,
+  onSearch: React.propTypes.func,
+  results: React.propTypes.array,
 };
 
 module.exports = SearchBox;

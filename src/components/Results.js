@@ -23,9 +23,9 @@ class Results extends Component {
       styles.display = 'block';
     }
     return (
-      <div style={ styles } >
+      <div style={ styles }>
       { titles.map(title => title) }
-      < /div>
+      </div>
 		);
   }
 }

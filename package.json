@@ -5,8 +5,8 @@
   "main": "webpack.config.js",
   "dependencies": {
     "radium": "^0.15.3",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0",
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0",
     "react-redux": "^4.0.0",
     "redux": "^3.0.4"
   },
@@ -22,13 +22,13 @@
     "json-loader": "^0.5.3",
     "redux-devtools": "^2.1.5",
     "style-loader": "^0.12.4",
-    "webpack": "^1.12.2"
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "serve": "node server.js",
-    "start": "node ./node_modules/webpack/bin/webpack.js --watch & node server.js",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base .",
     "webpack": "node ./node_modules/webpack/bin/webpack.js",
-    "webpack-prod": "NODE_ENV=production webpack --config webpack.config.prod.js"
+    "webpack-prod": "NODE_ENV=production ./node_modules/webpack/bin/webpack.js --config webpack.config.prod.js"
   },
   "author": "Kamuela Franco",
   "license": "MIT"

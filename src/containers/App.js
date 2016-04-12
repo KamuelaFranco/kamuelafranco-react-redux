@@ -11,7 +11,7 @@ const BackgroundVideo = require('../components/BackgroundVideo');
 
 class App extends Component {
   render() {
-    const { results, searchFor } = this.props;
+    const { results, search } = this.props;
     return (
       <div>
         <BackgroundVideo
@@ -20,7 +20,7 @@ class App extends Component {
           posterSource="assets/poster.png"
         />
         <SearchBox
-          onSearch={searchFor}
+          onSearch={search}
           results={results}
         />
         <Results results={results} />
@@ -31,19 +31,19 @@ class App extends Component {
 }
 
 App.propTypes = {
-  results: React.PropTypes.array,
-  searchFor: React.PropTypes.func,
+  results: React.PropTypes.array.isRequired,
+  searchFor: React.PropTypes.func.isRequired,
 };
-
-function mapDispatchToProps(dispatch) {
-  return {
-    searchFor: bindActionCreators(search, dispatch),
-  };
-}
 
 function mapStateToProps(state) {
   return {
     results: state.results,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    search: bindActionCreators(search, dispatch),
   };
 }
 

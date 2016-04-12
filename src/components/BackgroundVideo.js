@@ -40,22 +40,25 @@ function disableClick(event) {
   return false;
 }
 
-const BackgroundVideo = (props) =>
-  <div style={styles.fullscreenBackground}>
-    <video
-      onContextMenu={disableClick}
-      loop muted autoPlay
-      poster={props.posterSource}
-      style={ styles.fullscreenBackgroundVideo}
-    >
-      <source src={props.videoSource} type={props.videoType} />
-    </video>
-  </div>;
+function BackgroundVideo(props) {
+  return (
+    <div style={styles.fullscreenBackground}>
+      <video
+        onContextMenu={disableClick}
+        loop muted autoPlay
+        poster={props.posterSource}
+        style={ styles.fullscreenBackgroundVideo}
+      >
+        <source src={props.videoSource} type={props.videoType} />
+      </video>
+    </div>
+  );
+}
 
-BackgroundVideo.propTypes = {
-  posterSource: React.propTypes.String.isRequired,
-  videoSource: React.propTypes.String.isRequired,
-  videoType: React.propTypes.String.isRequired,
-};
+//BackgroundVideo.propTypes = {
+//  posterSource: React.propTypes.String.isRequired,
+//  videoSource: React.propTypes.String.isRequired,
+//  videoType: React.propTypes.String.isRequired,
+//};
 
 module.exports = radium(BackgroundVideo);
